@@ -72,14 +72,16 @@ img {
 .m-b-md {
     margin-bottom: 20px;
 }
+
 .content {
     margin-top: 60px;
     margin-left: 200px;
     position: relative;
-    padding: 30px;
+    padding: 3px;
     transition: margin-left 0.3s ease-out;
     -webkit-transition: margin-left 0.3s ease-out;
 }
+
 .cpanel {
     color: #979da3;
     background-color: none;
@@ -386,6 +388,7 @@ body.nav-toggle .navigation-panel:before {
     position: relative;
     display: block;
 }
+
 .dash-nav.nav li.active a {
     border-left: 6px solid #f6a821;
     padding-left: 19px;
@@ -402,27 +405,38 @@ body.nav-toggle .navigation-panel:before {
     color: #FFFFFF;
     margin-top: 10px;
 }
+
 .navbar-default .navbar-brand {
     color: #FFFFFF;
 }
-.navbar-default .navbar-brand, .navbar-default .navbar-brand:focus {
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:focus {
     width: 200px;
-    background-color:#3a3d47;
+    background-color: #3a3d47;
     height: 60px;
     padding: 20px 25px;
     font-weight: 400;
     letter-spacing: 2px;
     color: #FFFFFF;
 }
+
 .navbar-default .navbar-brand:hover {
     color: #FFFFFF;
     background-color: #3a3d47;
 }
-.files-data{
-    height: 250px;
+
+.files-data {
+    min-height: 250px;
     border-style: solid;
     border-top-color: #2a2d35;
-    border-left-color: #2a2d35; 
+    border-left-color: #2a2d35;
     border-right-color: #2a2d35;
-    border-bottom: solid #3a3d47;    
+    border-bottom: solid #3a3d47;
+}
+
+.drawingArea-data {
+    min-height: 430px;
+    border-bottom: solid #2a2d35;
+    height: auto;
 }

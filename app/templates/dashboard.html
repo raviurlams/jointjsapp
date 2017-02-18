@@ -24,10 +24,14 @@
         <nav style="height:94%">
             <ul class="nav dash-nav">
                 <li class="nav-category files-data">
-                    Tree Directive required
+                    Files Tree Directive required
                 </li>
                 <li class="nav-category">
-                    Functions Directive Here
+                    <ul class="nav dash-nav">
+                        <li>
+                            join
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -35,8 +39,63 @@
     <!-- Header-->
     <section class="content">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row drawingArea-data">
                 Drag n drop and drawing using <a target="_blank" href="https://www.jointjs.com/"> https://www.jointjs.com/ </a>
+            </div>            
+            <div class="col-md-12 row" ng-if="isCollapsePanel">
+                <div class="cpanel">
+                    <div class="cpanel-heading">
+                        <div class="cpanel-tools">
+                            <a class="cpanel-toggle" ng-click="showHidePanel($event)"><i class="fa fa-chevron-up"></i></a>
+                            <a class="cpanel-close"><i class="fa fa-times" ng-click="removePanel($event)"></i></a>
+                        </div>                       
+                    </div>
+                    <div class="cpanel-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Phone</th>
+                                        <th>Street Address</th>
+                                        <th>City</th>
+                                        <th>Country</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Abraham</td>
+                                        <td>076 9477 4896</td>
+                                        <td>294-318 Duis Ave</td>
+                                        <td>Vosselaar</td>
+                                        <td>Belgium</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phelan</td>
+                                        <td>0500 034548</td>
+                                        <td>680-1097 Mi Rd.</td>
+                                        <td>Lavoir</td>
+                                        <td>Pakistan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Raya</td>
+                                        <td>(01315) 27698</td>
+                                        <td>Ap #289-8161 In Avenue</td>
+                                        <td>Santomenna</td>
+                                        <td>Burkina Faso</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Azalia</td>
+                                        <td>0500 854198</td>
+                                        <td>226-4861 Augue. St.</td>
+                                        <td>Newtown</td>
+                                        <td>Christmas Island</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
