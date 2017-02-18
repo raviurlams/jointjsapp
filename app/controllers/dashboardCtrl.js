@@ -6,6 +6,7 @@
     function dashboardCtrl($scope, $rootScope, appConfiguration, $state, $ajaxFactory, localStorageService) {
         $rootScope.loginId = localStorageService.get('email');
         $scope.isCollapsePanel = true;
+        $scope.isShowMenu = true;
         if (!$rootScope.loginId) {
             $state.go(appConfiguration.signInState);
         }
@@ -13,7 +14,9 @@
         $scope.createProject = function() {
             alert('bootstrap dialog required');
         }
-
+        $scope.showMenu = function() {
+            $scope.isShowMenu = !$scope.isShowMenu;
+        }
         $scope.removePanel = function(event) {
             event.preventDefault();            
             $scope.isCollapsePanel = false;
