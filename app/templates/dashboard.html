@@ -23,6 +23,11 @@
     <aside class="navigation-panel">
         <nav style="height:94%">
             <ul class="nav dash-nav">
+                <li style="padding: 5px;">
+                    <div>
+                        <input type="text" placeholder="Search" class="form-control" autocomplete="off" required>
+                    </div>
+                </li>
                 <li class="nav-category files-data">
                     Files Tree Directive required
                 </li>
@@ -30,7 +35,7 @@
                     <div>
                         <input type="text" placeholder="Search" class="form-control" autocomplete="off" required>
                     </div>
-                    <ul class="nav dash-nav">                       
+                    <ul class="nav dash-nav">
                         <li class="nav-functions">
                             <a href="javascript:void(0)">Join</a>
                         </li>
@@ -47,14 +52,14 @@
         <div class="container-fluid">
             <div class="row drawingArea-data">
                 Drag n drop and drawing using <a target="_blank" href="https://www.jointjs.com/"> https://www.jointjs.com/ </a>
-            </div>            
+            </div>
             <div class="col-md-12 row" ng-if="isCollapsePanel">
                 <div class="cpanel">
                     <div class="cpanel-heading">
                         <div class="cpanel-tools">
                             <a class="cpanel-toggle" ng-click="showHidePanel($event)"><i class="fa fa-chevron-up"></i></a>
                             <a class="cpanel-close"><i class="fa fa-times" ng-click="removePanel($event)"></i></a>
-                        </div>                       
+                        </div>
                     </div>
                     <div class="cpanel-body">
                         <div class="table-responsive">
