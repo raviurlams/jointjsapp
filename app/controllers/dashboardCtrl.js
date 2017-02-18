@@ -7,8 +7,11 @@
         $rootScope.loginId = localStorageService.get('email');
         $scope.isCollapsePanel = true;
         $scope.isShowMenu = true;
+<<<<<<< HEAD
         $scope.dataSource = {};
         var index = 1;
+=======
+>>>>>>> d57ea5e219fa8f56edb4173974148233fee5e5eb
         if (!$rootScope.loginId) {
             $state.go(appConfiguration.signInState);
         }
