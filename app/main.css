@@ -440,3 +440,10 @@ body.nav-toggle .navigation-panel:before {
     border-bottom: solid #2a2d35;
     height: auto;
 }
+.content > div {
+    opacity: 1;
+}
+.nav-functions a{    
+    padding: 0;
+    margin: 0;
+}

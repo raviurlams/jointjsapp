@@ -15,9 +15,7 @@
         }
 
         $scope.removePanel = function(event) {
-            event.preventDefault();
-            var hpanel = $(event.target).closest('div.cpanel');
-            hpanel.remove();
+            event.preventDefault();            
             $scope.isCollapsePanel = false;
             $('.drawingArea-data').css("border-bottom", "solid #3a3d47");
         }
@@ -34,8 +32,7 @@
             icon.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
             hpanel.toggleClass('').toggleClass('cpanel-collapse');
             setTimeout(function() {
-                hpanel.resize();
-                hpanel.find('[id^=map-]').resize();
+                hpanel.resize();                
             }, 50);
 
             $('.drawingArea-data').css("height", "100%");
