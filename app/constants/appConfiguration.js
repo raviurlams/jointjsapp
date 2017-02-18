@@ -3,7 +3,7 @@
     dashboardApp.constant('appConfiguration', {
         datafiles: '/data/',
         templatePath: './app/templates/',
-        debugmode: false,
+        debugmode: true,
         signIn: '/login',
         signInState: 'signIn',
         signUp: '/signUp',

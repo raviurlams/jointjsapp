@@ -6,6 +6,9 @@
     function dashboardCtrl($scope, $rootScope, appConfiguration, $state, $ajaxFactory, localStorageService) {
         $rootScope.loginId = localStorageService.get('email');
         $scope.isCollapsePanel = true;
+        $scope.isShowMenu = true;
+        $scope.dataSource = {};
+        var index = 1;
         if (!$rootScope.loginId) {
             $state.go(appConfiguration.signInState);
         }
@@ -13,9 +16,11 @@
         $scope.createProject = function() {
             alert('bootstrap dialog required');
         }
-
+        $scope.showMenu = function() {
+            $scope.isShowMenu = !$scope.isShowMenu;
+        }
         $scope.removePanel = function(event) {
-            event.preventDefault();            
+            event.preventDefault();
             $scope.isCollapsePanel = false;
             $('.drawingArea-data').css("border-bottom", "solid #3a3d47");
         }
@@ -32,11 +37,33 @@
             icon.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
             hpanel.toggleClass('').toggleClass('cpanel-collapse');
             setTimeout(function() {
-                hpanel.resize();                
+                hpanel.resize();
             }, 50);
 
             $('.drawingArea-data').css("height", "100%");
         }
+
+        $scope.loadData = function(filepath) {
+            var promiseObj = $ajaxFactory.loadJSONFile(appConfiguration.datafiles + filepath);
+            promiseObj.then(function(d) {
+                $rootScope.showProcessing = false;
+                $scope.isErorMsg = true;
+                $scope.dataSource['file'+index] = d;
+                index ++;
+                console.log($scope.dataSource)
+            });
+            promiseObj.catch(function(d) {
+                $rootScope.showProcessing = false;
+                console.log('catch block executed : promiseObj ', d);
+                return d;
+            });
+            promiseObj.finally(function(d) {
+                console.log('finally block executed : promiseObj', d);
+            });
+        }
+
+        $scope.loadData('file1.json');
+        $scope.loadData('file2.json');
     }
 
 })();
