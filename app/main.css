@@ -266,6 +266,7 @@ span.k-widget.k-tooltip-validation {
     background: none;
     box-shadow: none;
     color: #ad2929;
+    font-size: 85%;
 }
 
 .k-tooltip-validation .k-warning {
