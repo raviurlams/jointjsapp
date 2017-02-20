@@ -33,7 +33,7 @@
                         <input type="text" placeholder="Search" class="form-control" autocomplete="off" required>
                     </div>
                 </li>
-                <li ng-repeat="(key, value) in dataSource">
+                <li ng-repeat="(key, value) in dataSource" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable>
                     <a href="javascript:void(0)" ng-model="value">{{key}}</a>
                 </li>
                 <li style="padding: 5px;">
@@ -41,10 +41,10 @@
                         <input type="text" placeholder="Search" class="form-control" autocomplete="off" required>
                     </div>
                     <ul class="nav dash-nav">
-                        <li class="nav-functions">
+                        <li class="nav-functions" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable>
                             <a href="javascript:void(0)">Join</a>
                         </li>
-                        <li class="nav-functions">
+                        <li class="nav-functions" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable>
                             <a href="javascript:void(0)">Merge</a>
                         </li>
                     </ul>
@@ -53,12 +53,12 @@
         </nav>
     </aside>
     <!-- Header-->
-    <section class="content" ng-style="{ 'margin-left' : (isShowMenu) ? '200px' : '0' }" >
+    <section class="datacontent" ng-style="{ 'margin-left' : (isShowMenu) ? '200px' : '0' }" >
         <div class="container-fluid">
             <div class="row drawingArea-data">
                 <rappid title="Angular Rappid" source="data/basic.json">
             </div>
-            <div class="col-md-12 row" ng-if="!isCollapsePanel">
+            <div class="col-md-12 row" ng-if="isCollapsePanel">
                 <div class="cpanel">
                     <div class="cpanel-heading">
                         <div class="cpanel-tools">

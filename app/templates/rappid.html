@@ -1,4 +1,11 @@
 <div class="rappid">
- <div class="paper-container"></div>
-  <div class="inspector-container"></div> 
+    <div class="paper-container" data-drop="true" jqyoui-droppable></div>
+    <div class="inspector-container">        
+        <button class="btn-expand" title="Expand all" ng-click="components.stencil.openGroups()">
+            <i class="fa fa-plus-circle"></i>
+        </button>
+        <button class="btn-collapse" title="Collapse all" ng-click="components.stencil.closeGroups()">
+            <i class="fa fa-minus-circle"></i>
+        </button>
+    </div>
 </div>

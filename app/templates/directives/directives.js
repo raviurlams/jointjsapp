@@ -21,10 +21,10 @@ dashboardApp.directive('rappid', [function() {
         function paperInit(scope, element) {
 
             graph = new joint.dia.Graph;
-
+            //console.log($( window ).width(),$( window ).width()*0.2)
             paper = new joint.dia.Paper({
-                width: 2000,
-                height: 2000,
+                width: ($( window ).width() - ($( window ).width()*0.3)),
+                height: 450,
                 gridSize: 10,
                 perpendicularLinks: true,
                 model: graph,
@@ -52,37 +52,37 @@ dashboardApp.directive('rappid', [function() {
         },
 
         // Create stencil.
-        // function stencilInit(scope, element) {
+        function stencilInit(scope, element) {
 
-        //     function layout(graph) {
-        //         joint.layout.GridLayout.layout(graph, {
-        //             columnWidth: stencil.options.width / 2 - 10,
-        //             columns: 2,
-        //             rowHeight: 75,
-        //             dy: 5,
-        //             dx: 5,
-        //             resizeToFit: true
-        //         });
-        //     }
+            function layout(graph) {
+                joint.layout.GridLayout.layout(graph, {
+                    columnWidth: stencil.options.width / 2 - 10,
+                    columns: 2,
+                    rowHeight: 75,
+                    dy: 5,
+                    dx: 5,
+                    resizeToFit: true
+                });
+            }
 
-        //     stencil = new joint.ui.Stencil({
-        //         graph: graph,
-        //         paper: paper,
-        //         width: 240,
-        //         groups: scope.data.stencil.groups,
-        //         search: scope.data.stencil.search
-        //     }).on('filter', layout);
+            stencil = new joint.ui.Stencil({
+                graph: graph,
+                paper: paper,
+                width: 240,
+                groups: scope.data.stencil.groups,
+                search: scope.data.stencil.search
+            }).on('filter', layout);
 
-        //     $('.stencil-container', element).append(stencil.render().el);
+            $('.inspector-container', element).append(stencil.render().el);
 
-        //     _.each(scope.data.stencil.shapes, function(shapes, groupName) {
-        //         stencil.load(shapes, groupName);
-        //         layout(stencil.getGraph(groupName));
-        //         stencil.getPaper(groupName).fitToContent(1, 1, 10);
-        //     });
+            _.each(scope.data.stencil.shapes, function(shapes, groupName) {
+                stencil.load(shapes, groupName);
+                layout(stencil.getGraph(groupName));
+                stencil.getPaper(groupName).fitToContent(1, 1, 10);
+            });
 
-        //     scope.components.stencil = stencil;
-        // },
+            scope.components.stencil = stencil;
+        },
 
         // Selection
         function selectionInit(scope, element) {

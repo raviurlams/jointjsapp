@@ -73,7 +73,7 @@ img {
     margin-bottom: 20px;
 }
 
-.content {
+.datacontent {
     margin-top: 60px;
     margin-left: 200px;
     position: relative;
@@ -228,11 +228,13 @@ fieldset[disabled] .form-control {
         margin: auto 10px;
     }
 }
+
 .left-nav-toggle {
     float: left;
     padding: 9px 10px 8px 25px;
     font-size: 2em;
 }
+
 .navbar-nav > li > a {
     text-transform: uppercase;
     padding: 20px 15px;
@@ -355,10 +357,10 @@ span.k-widget.k-tooltip-validation {
     z-index: -1;
     left: 0;
     background-color: #24262d;
-    width: 200px;    
+    width: 200px;
 }
 
-body.nav-toggle .content {
+body.nav-toggle .datacontent {
     margin-left: 0;
 }
 
@@ -447,15 +449,44 @@ body.nav-toggle .navigation-panel:before {
     border-bottom: solid #2a2d35;
     height: auto;
 }
-.content > div {
+
+.datacontent > div {
     opacity: 1;
 }
-.nav-functions a{    
+
+.nav-functions a {
     padding: 2px 15px !important;
     margin: 0 !important;
 }
 
 .btn > img {
-   vertical-align: middle;
-   height: 20px;
+    vertical-align: middle;
+    height: 20px;
+}
+
+.rappid h3 {
+    color: #000 !important;
+}
+
+.rappid label {
+    color: #000 !important;
+}
+
+.paper-scroller-background {
+    min-width: 600px !important;
+    max-height: 450px !important;
+}
+
+.thumbnail {
+    height: 280px !important;
+}
+
+.btn-droppable {
+    width: 180px;
+    height: 30px;
+    padding-left: 4px;
+}
+
+.btn-draggable {
+    width: 160px;
 }

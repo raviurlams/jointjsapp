@@ -1,5 +1,5 @@
 angular.module('clientIO', []);
-var dashboardApp = angular.module('boardApp', ['ui.router', 'LocalStorageModule', 'ngMessages', 'ui.bootstrap', 'clientIO']);
+var dashboardApp = angular.module('boardApp', ['ui.router', 'LocalStorageModule', 'ngMessages', 'ui.bootstrap', 'ngDragDrop','clientIO']);
 (function() {
     'use strict';
 
