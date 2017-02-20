@@ -25,7 +25,8 @@
             </div>
         </div>
     </nav>
-    <aside class="navigation-panel" ng-if="isShowMenu">
+      <!-- End of Header-->
+    <!-- <aside class="navigation-panel" ng-if="isShowMenu">
         <nav style="height:94%">
             <ul class="nav dash-nav">
                 <li style="padding: 5px;">
@@ -51,68 +52,13 @@
                 </li>
             </ul>
         </nav>
-    </aside>
+    </aside> -->
     <!-- Header-->
-    <section class="datacontent" ng-style="{ 'margin-left' : (isShowMenu) ? '200px' : '0' }" >
+    <section class="dashboardContent">
         <div class="container-fluid">
             <div class="row drawingArea-data">
-                <rappid title="Angular Rappid" source="data/basic.json">
-            </div>
-            <div class="col-md-12 row" ng-if="isCollapsePanel">
-                <div class="cpanel">
-                    <div class="cpanel-heading">
-                        <div class="cpanel-tools">
-                            <a class="cpanel-toggle" ng-click="showHidePanel($event)"><i class="fa fa-chevron-up"></i></a>
-                            <a class="cpanel-close"><i class="fa fa-times" ng-click="removePanel($event)"></i></a>
-                        </div>
-                    </div>
-                    <div class="cpanel-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Phone</th>
-                                        <th>Street Address</th>
-                                        <th>City</th>
-                                        <th>Country</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Abraham</td>
-                                        <td>076 9477 4896</td>
-                                        <td>294-318 Duis Ave</td>
-                                        <td>Vosselaar</td>
-                                        <td>Belgium</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Phelan</td>
-                                        <td>0500 034548</td>
-                                        <td>680-1097 Mi Rd.</td>
-                                        <td>Lavoir</td>
-                                        <td>Pakistan</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Raya</td>
-                                        <td>(01315) 27698</td>
-                                        <td>Ap #289-8161 In Avenue</td>
-                                        <td>Santomenna</td>
-                                        <td>Burkina Faso</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Azalia</td>
-                                        <td>0500 854198</td>
-                                        <td>226-4861 Augue. St.</td>
-                                        <td>Newtown</td>
-                                        <td>Christmas Island</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <rappid></rappid>
+            </div>            
         </div>
     </section>
 </div>

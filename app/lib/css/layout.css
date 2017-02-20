@@ -17,9 +17,9 @@ file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
    position: absolute;
    top: 0;
    left: 0;
-   right: 0;
-   padding-left: 246px;
+   right: 0;   
    height: 40px;
+   float: left;
 }
 
 .stencil-container {
@@ -45,7 +45,7 @@ file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
    bottom: 20px; /* statusbar height */
    width: 240px;
 }
-.papere-container {
+.paper-container {
    position: absolute;
    top: 40px;   /* toolbar height */
    left: 241px;

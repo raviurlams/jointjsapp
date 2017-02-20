@@ -1,16 +1,3 @@
-/*! Rappid v2.0.1 - HTML5 Diagramming Framework - TRIAL VERSION
-
-Copyright (c) 2015 client IO
-
- 2017-02-01 
-
-
-This Source Code Form is subject to the terms of the Rappid Trial License
-, v. 2.0. If a copy of the Rappid License was not distributed with this
-file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
- or from the Rappid archive as was distributed by client IO. See the LICENSE file.*/
-
-
 dashboardApp.directive('rappid', [function() {
 
     var paper, graph, paperScroller, stencil, selection, selectionView, clipboard, commandManager;
@@ -21,10 +8,10 @@ dashboardApp.directive('rappid', [function() {
         function paperInit(scope, element) {
 
             graph = new joint.dia.Graph;
-            //console.log($( window ).width(),$( window ).width()*0.2)
+
             paper = new joint.dia.Paper({
-                width: ($( window ).width() - ($( window ).width()*0.3)),
-                height: 450,
+                width: 2000,
+                height: 2000,
                 gridSize: 10,
                 perpendicularLinks: true,
                 model: graph,
@@ -73,7 +60,7 @@ dashboardApp.directive('rappid', [function() {
                 search: scope.data.stencil.search
             }).on('filter', layout);
 
-            $('.inspector-container', element).append(stencil.render().el);
+            $('.stencil-container', element).append(stencil.render().el);
 
             _.each(scope.data.stencil.shapes, function(shapes, groupName) {
                 stencil.load(shapes, groupName);
@@ -249,8 +236,7 @@ dashboardApp.directive('rappid', [function() {
 
         templateUrl: './app/templates/rappid.html',
 
-        scope: {
-            title: '@',
+        scope: {           
             source: '@'
         },
 
@@ -258,8 +244,6 @@ dashboardApp.directive('rappid', [function() {
 
             // container of all jointjs objects/plugins
             $scope.components = {};
-            //$scope.data = { stencil: {}, inspector: {} };
-
             var promiseObj = $ajaxFactory.loadJSONFile(appConfiguration.datafiles + 'basic.json');
             promiseObj.then(function(d) {
                 $rootScope.showProcessing = false;
@@ -272,8 +256,9 @@ dashboardApp.directive('rappid', [function() {
                 return d;
             });
             promiseObj.finally(function(d) {
-               // console.log('finally block executed : promiseObj', d);
+                // console.log('finally block executed : promiseObj', d);
             });
+
         }],
 
         link: function(scope, element, attrs) {

@@ -83,6 +83,15 @@ img {
     z-index: 1;
 }
 
+.dashboardContent {
+    margin-top: 60px;    
+    position: relative;
+    padding: 3px;
+    transition: margin-left 0.3s ease-out;
+    -webkit-transition: margin-left 0.3s ease-out;
+    z-index: 1;
+}
+
 .cpanel {
     color: #979da3;
     background-color: none;
