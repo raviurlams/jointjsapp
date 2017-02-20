@@ -454,3 +454,8 @@ body.nav-toggle .navigation-panel:before {
     padding: 2px 15px !important;
     margin: 0 !important;
 }
+
+.btn > img {
+   vertical-align: middle;
+   height: 20px;
+}

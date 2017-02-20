@@ -1,4 +1,5 @@
-var dashboardApp = angular.module('boardApp', ['ui.router', 'LocalStorageModule', 'ngMessages', 'ui.bootstrap']);
+angular.module('clientIO', []);
+var dashboardApp = angular.module('boardApp', ['ui.router', 'LocalStorageModule', 'ngMessages', 'ui.bootstrap', 'clientIO']);
 (function() {
     'use strict';
 
@@ -23,7 +24,7 @@ var dashboardApp = angular.module('boardApp', ['ui.router', 'LocalStorageModule'
             })
             .state(appConfiguration.forgetPwdState, {
                 url: appConfiguration.forgetPwd,
-                templateUrl: appConfiguration.templatePath + 'forgetPassword.html',                
+                templateUrl: appConfiguration.templatePath + 'forgetPassword.html',
                 controller: 'mainCtrl'
             })
             .state(appConfiguration.dashboardState, {
