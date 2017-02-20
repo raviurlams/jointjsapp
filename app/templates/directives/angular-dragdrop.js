@@ -204,7 +204,7 @@ var jqyoui = angular.module('ngDragDrop', []).service('ngDragDropService', ['$ti
         }
       }
 
-      $fromEl.css({'position': 'absolute', 'z-index': 9999})
+      $fromEl.css({'position': 'absolute','color':'#55da15', 'z-index': 9999})
         .css(fromPos)
         .animate(toPos, duration, function() {
           // Angular v1.2 uses ng-hide to hide an element
@@ -315,7 +315,7 @@ var jqyoui = angular.module('ngDragDrop', []).service('ngDragDropService', ['$ti
                 start: function(event, ui) {
                   ngDragDropService.draggableScope = scope;
                   zIndex = $(jqyouiOptions.helper ? ui.helper : this).css('z-index');
-                  $(jqyouiOptions.helper ? ui.helper : this).css('z-index', 9999);
+                  $(jqyouiOptions.helper ? ui.helper : this).css({'color':'#55da15', 'z-index': 9999});
                   jqyoui.startXY = $(this)[dragSettings.containment || 'offset']();
                   ngDragDropService.callEventCallback(scope, dragSettings.onStart, event, ui);
                 },

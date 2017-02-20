@@ -58,7 +58,7 @@
                 return d;
             });
             promiseObj.finally(function(d) {
-                console.log('finally block executed : promiseObj', d);
+                //console.log('finally block executed : promiseObj', d);
             });
         }
 

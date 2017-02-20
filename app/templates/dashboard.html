@@ -33,7 +33,7 @@
                         <input type="text" placeholder="Search" class="form-control" autocomplete="off" required>
                     </div>
                 </li>
-                <li ng-repeat="(key, value) in dataSource" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable>
+                <li ng-repeat="(key, value) in dataSource" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable jqyoui-draggable="{animate:true}">
                     <a href="javascript:void(0)" ng-model="value">{{key}}</a>
                 </li>
                 <li style="padding: 5px;">
