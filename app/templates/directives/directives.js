@@ -236,7 +236,7 @@ dashboardApp.directive('rappid', [function() {
 
         templateUrl: './app/templates/rappid.html',
 
-        scope: {           
+        scope: {
             source: '@'
         },
 
@@ -244,6 +244,7 @@ dashboardApp.directive('rappid', [function() {
 
             // container of all jointjs objects/plugins
             $scope.components = {};
+            $scope.isCollapsePanel = true;
             var promiseObj = $ajaxFactory.loadJSONFile(appConfiguration.datafiles + 'basic.json');
             promiseObj.then(function(d) {
                 $rootScope.showProcessing = false;
@@ -258,7 +259,32 @@ dashboardApp.directive('rappid', [function() {
             promiseObj.finally(function(d) {
                 // console.log('finally block executed : promiseObj', d);
             });
+            $scope.showMenu = function() {
+                $scope.isShowMenu = !$scope.isShowMenu;
+            }
+            $scope.removePanel = function(event) {
+                event.preventDefault();
+                $scope.isCollapsePanel = false;
+                $('.drawingArea-data').css("border-bottom", "solid #3a3d47");
+            }
+            $scope.showHidePanel = function() {
+                event.preventDefault();
+                var hpanel = $(event.target).closest('div.cpanel');
+                var icon = $(event.target).closest('i');
+                var body = hpanel.find('div.cpanel-body');
+                var footer = hpanel.find('div.cpanel-footer');
+                body.slideToggle(300);
+                footer.slideToggle(200);
 
+                // Toggle icon from up to down
+                icon.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
+                hpanel.toggleClass('').toggleClass('cpanel-collapse');
+                setTimeout(function() {
+                    hpanel.resize();
+                }, 50);
+
+                $('.drawingArea-data').css("height", "100%");
+            }
         }],
 
         link: function(scope, element, attrs) {
